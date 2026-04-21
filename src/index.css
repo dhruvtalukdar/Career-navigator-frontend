@@ -1,0 +1,156 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 97%;
+    --foreground: 210 11% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 11% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 11% 15%;
+
+    --primary: 174 100% 31%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 180 8% 95%;
+    --secondary-foreground: 210 11% 15%;
+
+    --muted: 180 8% 95%;
+    --muted-foreground: 210 6% 45%;
+
+    --accent: 174 100% 31%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 180 8% 88%;
+    --input: 180 8% 88%;
+    --ring: 174 100% 31%;
+
+    --radius: 0.5rem;
+
+    /* Custom Career Navigator colors */
+    --teal: 174 100% 31%;
+    --teal-dark: 174 100% 25%;
+    --teal-light: 174 40% 90%;
+    
+    --match-good: 142 76% 36%;
+    --match-medium: 38 92% 50%;
+    --match-low: 0 84% 60%;
+
+    --network-line: 174 30% 75%;
+    --network-dot: 174 50% 70%;
+  }
+
+  .dark {
+    --background: 210 11% 10%;
+    --foreground: 0 0% 95%;
+
+    --card: 210 11% 15%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 210 11% 15%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 174 100% 40%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 11% 20%;
+    --secondary-foreground: 0 0% 95%;
+
+    --muted: 210 11% 20%;
+    --muted-foreground: 210 6% 65%;
+
+    --accent: 174 100% 40%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 11% 25%;
+    --input: 210 11% 25%;
+    --ring: 174 100% 40%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .network-bg {
+    background: 
+      radial-gradient(circle at 50% 50%, hsl(var(--teal-light) / 0.3) 0%, transparent 60%),
+      linear-gradient(135deg, hsl(0 0% 97%) 0%, hsl(180 8% 95%) 100%);
+    position: relative;
+  }
+
+  .step-card {
+    @apply bg-card rounded-2xl shadow-lg p-8 max-w-lg w-full mx-4;
+    box-shadow: 0 10px 40px -10px hsl(var(--teal) / 0.15);
+  }
+
+  .btn-primary {
+    @apply bg-primary text-primary-foreground px-8 py-2.5 rounded-full font-medium 
+           hover:opacity-90 transition-all duration-200 shadow-md;
+  }
+
+  .btn-secondary {
+    @apply border-2 border-primary text-primary px-8 py-2.5 rounded-full font-medium 
+           hover:bg-primary hover:text-primary-foreground transition-all duration-200;
+  }
+
+  .progress-segment {
+    @apply h-1 rounded-full transition-all duration-300;
+  }
+
+  .progress-active {
+    @apply bg-primary;
+  }
+
+  .progress-inactive {
+    @apply bg-border;
+  }
+
+  .career-card {
+    @apply bg-card rounded-xl shadow-md p-4 border border-border;
+    min-width: 180px;
+  }
+
+  .match-badge {
+    @apply w-12 h-12 rounded-full flex items-center justify-center text-sm font-bold text-white;
+  }
+
+  .match-good {
+    @apply bg-[hsl(142,76%,36%)];
+  }
+
+  .match-medium {
+    @apply bg-[hsl(38,92%,50%)];
+  }
+
+  .match-low {
+    @apply bg-[hsl(0,84%,60%)];
+  }
+
+  .filter-select {
+    @apply border border-border rounded-md px-3 py-2 bg-card text-sm min-w-[180px];
+  }
+
+  .drag-zone {
+    @apply border-2 border-dashed border-primary/30 rounded-xl p-8 bg-primary/5 
+           hover:border-primary/50 transition-colors cursor-pointer;
+  }
+}
