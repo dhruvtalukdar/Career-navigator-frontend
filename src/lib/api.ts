@@ -3,9 +3,7 @@
 // Uses environment variable for API base URL if set, otherwise defaults to Render backend in production and localhost in development.
 export const API_BASE_URL =
   import.meta.env.VITE_API_BASE_URL ||
-  (import.meta.env.MODE === 'production'
-    ? 'https://career-navigator-backend.onrender.com'
-    : 'http://127.0.0.1:5000');
+  'https://career-navigator-backend.onrender.com';
 
 // API Endpoints
 export const API_ENDPOINTS = {
